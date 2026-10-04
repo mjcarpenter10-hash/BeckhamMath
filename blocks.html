@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Math Games">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#EAF4FF">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/blocks.css">
+<title>Block Builder</title>
+</head>
+<body>
+<main class="app">
+  <header class="bar">
+    <a class="icon-btn press" href="./" aria-label="Back to games">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg>
+    </a>
+    <div class="progress">
+      <p class="level-name" id="levelName"></p>
+      <div class="meter" id="meter" role="img" aria-label="Level progress"></div>
+    </div>
+    <button class="icon-btn press" id="sayBtn" aria-label="Say it again">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+    </button>
+  </header>
+
+  <section class="prompt" aria-live="polite">
+    <div class="task" id="task"></div>
+    <div class="hint" id="hint"></div>
+  </section>
+
+  <section class="mat" id="mat" aria-label="Place value mat">
+    <div class="col" data-kind="h">
+      <div class="col-head"><span class="col-name">Hundreds</span><span class="col-count"></span></div>
+      <div class="col-body"></div>
+    </div>
+    <div class="col" data-kind="t">
+      <div class="col-head"><span class="col-name">Tens</span><span class="col-count"></span></div>
+      <div class="col-body"></div>
+      <button class="bundle press" data-bundle="t" hidden>Trade for a hundred</button>
+    </div>
+    <div class="col" data-kind="o">
+      <div class="col-head"><span class="col-name">Ones</span><span class="col-count"></span></div>
+      <div class="col-body"></div>
+      <button class="bundle press" data-bundle="o" hidden>Trade for a ten</button>
+    </div>
+  </section>
+
+  <section class="controls">
+    <div class="tray" id="tray">
+      <button class="bin press" data-add="h" aria-label="Add a hundred"><span class="blk hun"></span></button>
+      <button class="bin press" data-add="t" aria-label="Add a ten"><span class="blk ten"></span></button>
+      <button class="bin press" data-add="o" aria-label="Add a one"><span class="blk one"></span></button>
+      <button class="check press" id="checkBtn">Check</button>
+    </div>
+    <div class="choices" id="choices" hidden></div>
+    <div class="feedback" id="feedback" hidden>
+      <div class="msg" id="fbMsg"></div>
+      <div class="fb-btns" id="fbBtns"></div>
+    </div>
+  </section>
+</main>
+
+<div class="overlay" id="startScreen">
+  <div class="card">
+    <div class="start-art" aria-hidden="true">
+      <span class="blk ten"></span><span class="blk ten"></span><span class="blk one"></span><span class="blk one"></span><span class="blk one"></span>
+    </div>
+    <h2>Block Builder</h2>
+    <p>Build numbers with tens and ones.</p>
+    <button class="go press" id="startBtn">Play</button>
+  </div>
+</div>
+
+<div class="overlay" id="levelUp" hidden>
+  <div class="card">
+    <div class="burst" aria-hidden="true">🏆</div>
+    <h2 id="luTitle">Level done!</h2>
+    <p id="luText"></p>
+    <button class="go press" id="luBtn">Keep going</button>
+  </div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/skills.js"></script>
+<script src="js/blocks.js"></script>
+</body>
+</html>
