@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Math Games">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#EAF4FF">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/menu.css">
+<title>Math Games</title>
+</head>
+<body>
+<main class="menu">
+  <h1>Pick a game</h1>
+
+  <a class="game press" href="blocks.html">
+    <span class="game-art" aria-hidden="true">
+      <span class="blk ten"></span><span class="blk ten"></span><span class="blk ten"></span>
+      <span class="ones"><span class="blk one"></span><span class="blk one"></span><span class="blk one"></span><span class="blk one"></span></span>
+    </span>
+    <span class="game-name">Block Builder</span>
+  </a>
+
+  <div class="game press soon" aria-disabled="true">
+    <span class="game-art field" aria-hidden="true">🏈</span>
+    <span class="game-name">Football Drive<small>Coming soon</small></span>
+  </div>
+
+  <button class="grownups" id="grownBtn"><span class="fill" id="grownFill"></span><span>Hold for grown-ups</span></button>
+</main>
+
+<div class="overlay" id="panel" hidden>
+  <div class="sheet" role="dialog" aria-labelledby="panelTitle">
+    <div class="sheet-head">
+      <h2 id="panelTitle">Progress</h2>
+      <button class="press close" id="closePanel">Done</button>
+    </div>
+    <p class="note">A level is done after 18 of the last 20 first tries are right. Check a level to skip it, uncheck to send him back.</p>
+    <ul class="levels" id="levels"></ul>
+
+    <h3>Back up progress</h3>
+    <p class="note">Copy this somewhere safe before reinstalling or switching phones, then paste it back to restore.</p>
+    <textarea id="dataBox" rows="3" spellcheck="false" placeholder="Saved progress shows up here"></textarea>
+    <div class="row">
+      <button class="press" id="copyBtn">Copy progress</button>
+      <button class="press" id="loadBtn">Restore pasted</button>
+    </div>
+    <p class="status" id="status" role="status"></p>
+    <button class="press danger" id="resetBtn">Start over</button>
+  </div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/skills.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>
