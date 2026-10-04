@@ -1,4 +1,4 @@
-# Math Games
+# Beckham Math
 
 Math practice games for a 1st grader working toward 2nd grade math. Static site for GitHub Pages, installable to the iPhone home screen.
 

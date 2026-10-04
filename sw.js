@@ -1,5 +1,5 @@
 /* Network first so updates you push show up right away; cache for offline. */
-const CACHE = 'math-games-v1';
+const CACHE = 'math-games-v2';
 const FILES = [
   './', 'index.html', 'blocks.html',
   'css/base.css', 'css/menu.css', 'css/blocks.css',
